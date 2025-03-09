@@ -1,14 +1,24 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-app = FastAPI()
 
-class NewUser(BaseModel):
+class UserNew(BaseModel):
     name: str
     email: str
     password: str
 
-@app.post('/signup')
-def signup_user(user: NewUser):
-    print(user)
-    pass
+
+app = FastAPI()
+
+
+@app.get("/")
+def get_hello():
+    print(app.docs_url)
+    print(app.redoc_url)
+    print(app.openapi_url)
+    return "hello world"
+
+
+@app.post("/signup")
+def signup_user(new_user: UserNew):
+    return "OK"
