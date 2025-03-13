@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Music App',
       theme: AppTheme.dartTheme,
       debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
+      home: const SignupPage(),
     );
   }
 }
