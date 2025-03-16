@@ -7,10 +7,9 @@ sql_engine = create_engine(DB_URL)
 session_local = sessionmaker(sql_engine, autoflush=False)
 db = session_local()
 
+
 def get_db():
     try:
         yield db
     finally:
         db.close()
-
-

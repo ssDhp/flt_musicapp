@@ -7,7 +7,7 @@ class AppTheme {
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.all(27),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Pallete.borderColor, width: 1),
+        borderSide: const BorderSide(color: Pallete.borderColor, width: 1),
         borderRadius: BorderRadius.circular(10),
       ),
       focusedBorder: OutlineInputBorder(
