@@ -1,6 +1,7 @@
 import 'package:client/core/providers/current_user_notifier.dart';
 import 'package:client/features/auth/view_models/auth_viewmodel.dart';
 import 'package:client/features/home/views/pages/home_page.dart';
+import 'package:client/features/home/views/pages/upload_song_page.dart';
 import 'package:flutter/material.dart';
 import 'package:client/core/theme/theme.dart';
 import 'package:client/features/auth/views/pages/signup_page.dart';
@@ -15,7 +16,7 @@ void main() async {
 
   final userModel =
       await providerContainer.read(authViewModelProvider.notifier).getData();
-  print(userModel);
+  print('Current User: $userModel');
 
   runApp(
     UncontrolledProviderScope(
@@ -35,9 +36,7 @@ class MyApp extends ConsumerWidget {
       title: 'Flutter Music App',
       theme: AppTheme.dartTheme,
       debugShowCheckedModeBanner: false,
-      home: currentUser == null ? const SignupPage() : const HomePage(),
+      home: currentUser == null ? const SignupPage() : const UploadSongPage(),
     );
   }
 }
-
-// 4:59

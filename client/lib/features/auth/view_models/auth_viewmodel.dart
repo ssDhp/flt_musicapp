@@ -44,7 +44,7 @@ class AuthViewModel extends _$AuthViewModel {
       fpd.Right(value: final r) => state = AsyncValue.data(r),
     };
 
-    print(extractedValue);
+    print('SignUp: $extractedValue');
   }
 
   Future<void> loginUser({
@@ -64,7 +64,7 @@ class AuthViewModel extends _$AuthViewModel {
       fpd.Right(value: final r) => _loginSucess(r),
     };
 
-    print(extractedValue);
+    print('Login: $extractedValue');
   }
 
   AsyncValue<UserModel>? _loginSucess(UserModel user) {

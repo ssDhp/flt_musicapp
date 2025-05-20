@@ -4,7 +4,7 @@ import 'package:client/core/widgets/loader.dart';
 import 'package:client/features/auth/view_models/auth_viewmodel.dart';
 import 'package:client/features/auth/views/pages/signup_page.dart';
 import 'package:client/features/auth/views/widgets/custom_button.dart';
-import 'package:client/features/auth/views/widgets/custom_textfield.dart';
+import 'package:client/core/widgets/custom_textfield.dart';
 import 'package:client/features/home/views/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
