@@ -6,9 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:client/core/theme/theme.dart';
 import 'package:client/features/auth/views/pages/signup_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final dir = await getApplicationDocumentsDirectory();
+  Hive.defaultDirectory = dir.path;
   final providerContainer = ProviderContainer();
   await providerContainer
       .read(authViewModelProvider.notifier)
@@ -36,7 +40,7 @@ class MyApp extends ConsumerWidget {
       title: 'Flutter Music App',
       theme: AppTheme.dartTheme,
       debugShowCheckedModeBanner: false,
-      home: currentUser == null ? const SignupPage() : const UploadSongPage(),
+      home: currentUser == null ? const SignupPage() : const HomePage(),
     );
   }
 }

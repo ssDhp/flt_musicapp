@@ -10,10 +10,10 @@ from schema.user_new import UserNew
 from schema.user_login import UserLogin
 from models.user import User
 
-auth_router = APIRouter()
+router = APIRouter()
 
 
-@auth_router.post("/signup", status_code=201)
+@router.post("/signup", status_code=201)
 def signup_user(new_user: UserNew, db=Depends(get_db)):
 
     # Check if user with same email already exists
@@ -35,7 +35,7 @@ def signup_user(new_user: UserNew, db=Depends(get_db)):
     return user_add
 
 
-@auth_router.post("/login")
+@router.post("/login")
 def login_user(login_user: UserLogin, db=Depends(get_db)):
 
     # Check if user with same email already exists
@@ -54,7 +54,7 @@ def login_user(login_user: UserLogin, db=Depends(get_db)):
     return {"token": jwt_token, "user": existing_user}
 
 
-@auth_router.get("/")
+@router.get("/")
 def get_user_data(db=Depends(get_db), user_dict = Depends(auth_middleware)):
     user_data = db.query(User).filter(User.id == user_dict['uuid']).first()
 

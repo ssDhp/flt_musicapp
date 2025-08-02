@@ -15,5 +15,8 @@ class AppTheme {
         borderRadius: BorderRadius.circular(10),
       ),
     ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Pallete.backgroundColor,
+    ),
   );
 }
