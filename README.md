@@ -1,4 +1,2 @@
 # flt_musicapp
-
-## Source 
-- https://www.youtube.com/watch?v=CWvlOU2Y3Ik @ 4:59
+Simple music player wriiten in Dart with the help of Flutter framework for UI.
